@@ -1,0 +1,9 @@
+apiVersion: accelerator.apps.tanzu.vmware.com/v1alpha1
+kind: Accelerator
+metadata:
+  name: tap-supply-chain
+spec:
+  git:
+    url: https://github.com/colrich/tap-supplychain-accelerator
+    ref:
+      branch: main

@@ -1,0 +1,13 @@
+accelerator:
+  displayName: new-tap-supply-chain
+  description: Create a new TAP supply chain
+  iconUrl: https://raw.githubusercontent.com/sample-accelerators/icons/master/icon-tanzu-light.png
+  tags: []
+  options:
+  - name: optionName
+    label: Nice Label
+    display: true
+    defaultValue: ""
+engine:
+  include:
+  - '**'
