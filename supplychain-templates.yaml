@@ -26,20 +26,19 @@ kind: ClusterImageTemplate
 metadata:
   name: kpack-battery
 spec:
-  image:
-    path: .status.latestImage
+  imagePath: .status.latestImage
 
   template:
     apiVersion: kpack.io/v1alpha1
     kind: Image
     metadata:
-      name: $(workload.name)$-image
+      name: $(workload.metadata.name)$-image
     spec:
-      tag: harbor-repo.vmware.com/kontinuedemo/$(workload.name)$
+      tag: harbor.amer.end2end.link/kontinuedemo/$(workload.metadata.name)$
       serviceAccount: service-account
       builder:
         kind: ClusterBuilder
         name: java-builder
       source:
         blob:
-          url: $(sources.0.url)$
+          url: $(sources[0].url)$
