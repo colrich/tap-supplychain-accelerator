@@ -1,5 +1,5 @@
 apiVersion: kontinue.io/v1alpha1
-kind: SupplyChain
+kind: ClusterSupplyChain
 metadata:
   name: tap-supply-chain
 spec:
@@ -19,3 +19,11 @@ spec:
       sources:
         - component: source-provider
           name: solo-source-provider
+
+    - name: knative-service-provider
+      templateRef:
+        kind: ClusterConfigTemplate
+        name: knative-service-battery
+      images:
+        - component: built-image-provider
+          name: solo-image-provider
